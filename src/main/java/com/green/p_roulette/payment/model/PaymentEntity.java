@@ -10,4 +10,6 @@ public class PaymentEntity {
     private int remainderBalance;
     private int paymentAt;
     private int currentMenuPrice;
+    private short starRating;
+    private String restaurant;
 }

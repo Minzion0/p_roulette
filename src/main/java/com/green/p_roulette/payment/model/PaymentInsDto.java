@@ -4,4 +4,6 @@ import lombok.Data;
 
 @Data
 public class PaymentInsDto {
+    private Long iuser;
+    private Long iuserMenu;
 }
