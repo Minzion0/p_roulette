@@ -8,4 +8,19 @@
         set iuser_menu=#{iuserMenu}
         ,imanagement=#{imanagement}
     </insert>
+
+    <select id="getUserMonthPayment" resultType="PaymentSelVo">
+        select A.ipayment,B.name,B.menu,A.payment_at paymentAt
+        from p_payment A
+        inner join (
+        select x.name,y.imanagement,z.menu
+        from p_user x
+        inner join p_management y
+        on x.iuser=y.iuser
+        inner join p_user_menu z
+        on x.iuser=z.iuser
+        ) B
+        on A.imanagement=B.imanagement
+        where imanagement=#{imanagement}
+    </select>
 </mapper>
