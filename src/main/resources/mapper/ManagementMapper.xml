@@ -11,4 +11,20 @@
         ,month_limit=#{monthLimit}
         ,balance=#{monthLimit}
     </insert>
+
+    <select id="getUserMangement" resultType="ManagementSelVo">
+        select iuser,year,month,month_limit monthLimit,balance,expense
+        from p_management
+        where iuser=#{iuser}
+        <if test="month>0">
+            and month=#{month} and year=#{year}
+        </if>
+        order by year,month desc
+    </select>
+    <select id="getUserMonthManagement" resultType="ManagementSelVo">
+        select iuser,year,month,month_limit monthLimit,balance,expense
+        from p_management
+        where iuser=#{iuser} and month=#{month} and year=#{year}
+        order by year,month desc
+    </select>
 </mapper>
