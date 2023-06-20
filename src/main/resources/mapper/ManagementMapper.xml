@@ -27,4 +27,11 @@
         where iuser=#{iuser} and month=#{month} and year=#{year}
         order by year,month desc
     </select>
+    <select id="findUserManagement" resultType="Long">
+        select imanagement
+        from p_management
+        where iuser =#{iuser}
+            and month = month(current_time)
+            and year = year(current_time)
+    </select>
 </mapper>

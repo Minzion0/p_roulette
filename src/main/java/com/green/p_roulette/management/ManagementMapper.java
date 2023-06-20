@@ -12,4 +12,5 @@ public interface ManagementMapper {
     int setMonthManagement(ManagementEntity entity);
     List<ManagementSelVo> getUserMangement(ManagementEntity entity);
     ManagementSelVo getUserMonthManagement(ManagementEntity entit);
+    Long findUserManagement(Long iuser);
 }

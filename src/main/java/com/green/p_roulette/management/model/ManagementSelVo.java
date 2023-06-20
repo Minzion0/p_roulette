@@ -1,7 +1,6 @@
 package com.green.p_roulette.management.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 
 @Getter
